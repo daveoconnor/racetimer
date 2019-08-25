@@ -1,0 +1,29 @@
+.race-timer-wrapper {
+	width: 100vw;
+	height: 100vh;
+}
+.race-timer-wrapper > .focus-status > .active,
+.race-timer-wrapper > .focus-status > .inactive {
+	font-weight: bold;
+	padding: 1em;
+}
+
+.race-timer-wrapper > .focus-status > .active {
+	display: none;
+}
+.race-timer-wrapper > .focus-status > .inactive {
+	display: block;
+	border: 3px solid red;
+	background-color: pink;
+	color: red;
+}
+
+.race-timer-wrapper:focus > .focus-status > .inactive {
+	display: none;
+}
+.race-timer-wrapper:focus > .focus-status > .active {
+	display: block;
+	border: 3px solid green;
+	background-color: lightgreen;
+	color: green;
+}

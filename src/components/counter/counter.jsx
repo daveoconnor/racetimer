@@ -15,8 +15,8 @@ export default function Counter({startTime, stopTime}) {
 
 	return (
 		<React.Fragment>
-			{displayTime(timerInfo)}
-			<ReactInterval timeout={200} enabled={ stopTime ? false : true} callback={() => counterTime()} />
+			{ stopTime ? '-' : displayTime(timerInfo)}
+			<ReactInterval timeout={100} enabled={ stopTime ? false : true} callback={() => counterTime()} />
 		</React.Fragment>
 	);
 }

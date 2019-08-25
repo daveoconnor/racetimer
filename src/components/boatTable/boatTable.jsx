@@ -14,11 +14,11 @@ export default function BoatTable() {
 			<table>
 				<thead>
 					<tr>
-						<td>Boat number</td>
-						<td>Start time</td>
-						<td></td>
-						<td>Stop time</td>
-						<td>Result time</td>
+						<th>Boat number</th>
+						<th>Start time</th>
+						<th>Stop time</th>
+						<th>Result time</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>

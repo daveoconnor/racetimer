@@ -1,4 +1,16 @@
+body {
+	font-size: 2rem;
+}
+header {
+	color: #ddd;
+	padding: 1rem;
+}
+h1 {
+	font-size: 2rem;
+	margin: 0px;
+}
 .race-timer-wrapper {
+	padding: 1rem;
 	width: 100vw;
 	height: 100vh;
 }
@@ -10,6 +22,8 @@
 
 .race-timer-wrapper > .focus-status > .active {
 	display: none;
+	font-size: 1rem;
+	text-align: center;
 }
 .race-timer-wrapper > .focus-status > .inactive {
 	display: block;
@@ -26,4 +40,64 @@
 	border: 3px solid green;
 	background-color: lightgreen;
 	color: green;
+}
+#instructions {
+	font-size: 1rem;
+	border: 1px solid #ccc;
+	background-color: #efefef;
+}
+#instructions dl {
+	display: flex;
+	margin: 0px;
+}
+#instructions dl dt, #instructions dl dd {
+	width: 50%;
+	margin: 0px;
+	padding: 0.5rem;
+	text-align: center;
+}
+#instructions dl dd:nth-child(even) {
+	border-right: 1px solid #ccc;
+}
+
+table {
+	width: 100%;
+}
+table thead tr th {
+	font-size: 1rem;
+	text-align: center;
+}
+table tbody tr {
+	line-height: 4rem;
+}
+table tbody tr td {
+	padding-left: 1rem;
+}
+table tbody tr:nth-child(even) {
+	background-color: #ccc;
+}
+table tbody tr:nth-child(odd) {
+	background-color: #ddd;
+}
+table tbody tr td:first-child {
+	background-color: navy;
+	color: white;
+	padding: 0.5rem;
+	font-weight: bold;
+	text-align: center;
+	width: 9rem;
+}
+table tbody tr td:nth-child(5) {
+	font-weight: bold;
+	padding-left: 1rem;
+	padding-right: 2rem;
+	width: 7rem;
+	background-color: orange;
+	text-align: center;
+	color: white;
+	border-top-right-radius: 34px;
+	border-bottom-right-radius: 34px;
+}
+table tbody tr.boat-row-complete td:nth-child(5) {
+	background-color: green;
 }

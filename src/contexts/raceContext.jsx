@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useReducer } from 'react';
+import React, { useContext, useReducer } from 'react';
 import _ from 'lodash';
 
 import { LogContext } from './logContext';

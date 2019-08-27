@@ -1,5 +1,5 @@
 body {
-	font-size: 2rem;
+	font-size: 1rem;
 }
 header {
 	color: #ddd;
@@ -8,6 +8,9 @@ header {
 h1 {
 	font-size: 2rem;
 	margin: 0px;
+}
+h2 {
+	font-size: 1.8rem;
 }
 .race-timer-wrapper {
 	padding: 1rem;
@@ -18,12 +21,12 @@ h1 {
 .race-timer-wrapper > .focus-status > .inactive {
 	font-weight: bold;
 	padding: 1em;
+	font-size: 1rem;
+	text-align: center;
 }
 
 .race-timer-wrapper > .focus-status > .active {
 	display: none;
-	font-size: 1rem;
-	text-align: center;
 }
 .race-timer-wrapper > .focus-status > .inactive {
 	display: block;
@@ -59,7 +62,16 @@ h1 {
 #instructions dl dd:nth-child(even) {
 	border-right: 1px solid #ccc;
 }
-
+#logging {
+	border: 1px solid #ddd;
+	padding: 0.7rem;
+	max-height: 7rem;
+	overflow-x: scroll;
+}
+#logging ul {
+	margin: 0px;
+	font-size: 0.7rem;
+}
 table {
 	width: 100%;
 }

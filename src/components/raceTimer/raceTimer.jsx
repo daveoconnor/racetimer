@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 import BoatTable from '../boatTable/boatTable';
 import { RaceContext } from '../../contexts/raceContext';
+import LogList from '../logList/logList';
 import './raceTimer.css';
 
 export default function RaceTimer() {
@@ -61,8 +62,8 @@ export default function RaceTimer() {
 					<dd>Alt + $num</dd>
 				</dl>
 			</section>
-			<section id="command-log">
-				context here for logs
+			<section id="logging">
+				<LogList />
 			</section>
 			<section id="main">
 				<BoatTable />

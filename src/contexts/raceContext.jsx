@@ -1,7 +1,9 @@
 import React, { useCallback, useContext, useReducer } from 'react';
 import _ from 'lodash';
 
+import { LogContext } from './logContext';
 export const RaceContext = React.createContext();
+let logger = null;
 
 const raceReducer = (state, action) => {
 	const createBoat = (boatNumber, startTime) => {
@@ -24,6 +26,7 @@ const raceReducer = (state, action) => {
 			const numberOfBoats = action.payload.numberOfBoats;
 			const allStartTimes = action.payload.startTime;
 			const allBoats = createBoats(numberOfBoats, allStartTimes);
+			_.each(allBoats, boat => logger.log('allBoats, boat number ' + boat.boatNumber + ' marked as started at ' + boat.startTime));
 			return { ...state, boats: allBoats };
 		case 'startBoat':
 			const boatNumber = action.payload.boatNumber;
@@ -31,10 +34,12 @@ const raceReducer = (state, action) => {
 			const boats = state.boats;
 			const newBoat = createBoat(boatNumber, boatStartTime);
 			boats[boatNumber] = newBoat;
+			logger.log('startBoat: boat number ' + newBoat.boatNumber + ' marked as started at ' + newBoat.startTime);
 			return { ...state, boats: boats };
 		case 'stopBoat':
 			const existingBoat = state.boats[action.payload.boatNumber];
 			existingBoat.stopTime = action.payload.stopTime;
+			logger.log('stopBoat: boat number ' + existingBoat.boatNumber + ' marked as stopped at ' + existingBoat.stopTime);
 			return {...state};
 		default:
 			return state;
@@ -42,6 +47,7 @@ const raceReducer = (state, action) => {
 };
 
 export default function RaceProvider({client, children}) {
+	logger = useContext(LogContext);
 	const defaultState = {
 		boats: {}
 	};

@@ -82,12 +82,29 @@ export default function RaceProvider({client, children}) {
 		});
 	}
 
+	const raceDataExists = (raceNumber) => {
+		let raceData = JSON.parse(localStorage.getItem('raceData'));
+		return raceData !== null && raceData[raceNumber] !== undefined;
+	};
+
+	const saveRace = (raceNumber) => {
+		let raceData = JSON.parse(localStorage.getItem('raceData'));
+		if (!raceData) {
+			raceData = {};
+		}
+		raceData[raceNumber] = state;
+		localStorage.setItem('raceData', JSON.stringify(raceData));
+		logger.log('race data saved for race ' + raceNumber);
+	};
+
 	return (
 		<RaceContext.Provider value={{
 			state: state,
 			startBoat: startBoat,
 			startAllBoats: startAllBoats,
 			stopBoat: stopBoat,
+			saveRace: saveRace,
+			raceDataExists: raceDataExists,
 		}}>
 			{children}
 		</RaceContext.Provider>

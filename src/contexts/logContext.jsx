@@ -5,10 +5,10 @@ export const LogContext = React.createContext();
 export default function LogProvider({client, children}) {
 	const [logs, setLogs] = useState([]);
 
-	const log = (message) => {
-		const tempLogs = [...logs];
-		tempLogs.push(message);
-		setLogs(tempLogs);
+	const log = async (message) => {
+		logs.push(message);
+		setLogs([...logs]);
+		return 1;
 	}
 
 	return (

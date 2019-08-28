@@ -113,3 +113,10 @@ table tbody tr td:nth-child(5) {
 table tbody tr.boat-row-complete td:nth-child(5) {
 	background-color: green;
 }
+label .ant-input-number{
+	margin-left: 1em;
+	width: 10em;
+}
+button {
+	margin-top: 1em;
+}

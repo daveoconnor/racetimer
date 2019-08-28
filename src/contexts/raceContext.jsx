@@ -66,7 +66,7 @@ export default function RaceProvider({client, children}) {
 		dispatch({
 			type: 'startAllBoats',
 			payload: {
-				numberOfBoats: 6,
+				numberOfBoats: numberOfBoats,
 				startTime: Date.now()
 			}
 		});

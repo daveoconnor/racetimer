@@ -26,7 +26,7 @@ const raceReducer = (state, action) => {
 			const numberOfBoats = action.payload.numberOfBoats;
 			const allStartTimes = action.payload.startTime;
 			const allBoats = createBoats(numberOfBoats, allStartTimes);
-			_.each(allBoats, boat => logger.log('allBoats, boat number ' + boat.boatNumber + ' marked as started at ' + boat.startTime));
+			_.each(allBoats, boat => logger.log('Boat number ' + boat.boatNumber + ' marked as started at ' + boat.startTime));
 			return { ...state, boats: allBoats };
 		case 'startBoat':
 			const boatNumber = action.payload.boatNumber;
@@ -34,12 +34,12 @@ const raceReducer = (state, action) => {
 			const boats = state.boats;
 			const newBoat = createBoat(boatNumber, boatStartTime);
 			boats[boatNumber] = newBoat;
-			logger.log('startBoat: boat number ' + newBoat.boatNumber + ' marked as started at ' + newBoat.startTime);
+			logger.log('Boat number ' + newBoat.boatNumber + ' marked as started at ' + newBoat.startTime);
 			return { ...state, boats: boats };
 		case 'stopBoat':
 			const existingBoat = state.boats[action.payload.boatNumber];
 			existingBoat.stopTime = action.payload.stopTime;
-			logger.log('stopBoat: boat number ' + existingBoat.boatNumber + ' marked as stopped at ' + existingBoat.stopTime);
+			logger.log('Boat number ' + existingBoat.boatNumber + ' marked as stopped at ' + existingBoat.stopTime);
 			return {...state};
 		default:
 			return state;
@@ -87,6 +87,14 @@ export default function RaceProvider({client, children}) {
 		return raceData !== null && raceData[raceNumber] !== undefined;
 	};
 
+	const getRaceData = (raceNumber) => {
+		let raceData = JSON.parse(localStorage.getItem('raceData'));
+		if (raceData && raceData[raceNumber]) {
+			return raceData[raceNumber].boats;
+		}
+		return {};
+	};
+
 	const saveRace = (raceNumber) => {
 		let raceData = JSON.parse(localStorage.getItem('raceData'));
 		if (!raceData) {
@@ -94,8 +102,18 @@ export default function RaceProvider({client, children}) {
 		}
 		raceData[raceNumber] = state;
 		localStorage.setItem('raceData', JSON.stringify(raceData));
-		logger.log('race data saved for race ' + raceNumber);
+		logger.log('Race data saved for race ' + raceNumber);
 	};
+
+	const deleteRaceResult = (raceNumber) => {
+		let raceData = JSON.parse(localStorage.getItem('raceData'));
+		if (!raceData) {
+			raceData = {};
+		}
+		delete raceData[raceNumber];
+		localStorage.setItem('raceData', JSON.stringify(raceData));
+		logger.log('Race data deleted for race ' + raceNumber);
+	}
 
 	return (
 		<RaceContext.Provider value={{
@@ -105,6 +123,8 @@ export default function RaceProvider({client, children}) {
 			stopBoat: stopBoat,
 			saveRace: saveRace,
 			raceDataExists: raceDataExists,
+			getRaceData: getRaceData,
+			deleteRaceResult: deleteRaceResult,
 		}}>
 			{children}
 		</RaceContext.Provider>

@@ -77,11 +77,11 @@ export default function RaceTimer() {
 
 	return (
 		<div tabIndex="0" className="race-timer-wrapper">
-			<header><h1>Race timer</h1></header>
-			<section className="focus-status">
+			<header className="focus-status">
+				<h1>Race timer</h1>
 				<div className="active">Active</div>
 				<div className="inactive">Inactive</div>
-			</section>
+			</header>
 			<section id="instructions">
 				<dl>
 					<dt>Start all boats racing</dt>

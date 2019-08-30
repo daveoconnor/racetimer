@@ -19,7 +19,7 @@ export default function RaceTimer() {
 
 	const startAllBoatsRacing = useCallback(() => {
 		raceCtxt.startAllBoats(numberOfBoats);
-	}, [raceCtxt]);	// eslint-disable-line react-hooks/exhaustive-deps
+	}, [raceCtxt, numberOfBoats]);
 
 	useEffect(() => {
 		logger.log('Number of boats in this race set to ' + numberOfBoats);

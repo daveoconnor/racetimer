@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Racetimer
 
-## Available Scripts
+A quick react project thrown together to track boat races. Not too exciting, just a timer with results table calculator.
 
-In the project directory, you can run:
+Requires the use of eyeballs at finish line to determine timing.
 
-### `npm start`
+Allows:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Starting boats all at once.
+1. Staggered starts
+1. Setting the number of boats for a race
+1. Results can be saved to localStorage for result calculation/in case of browser crash between races.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+# Usage:
+```
+npm start
+```
+Should automatically open http://localhost:3000 in browser
 
-### `npm test`
+# Race Starts
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Group Start
 
-### `npm run build`
+1. Set the number of boats (if starting them all at once)
+1. Alt-A to start
+1. Alt-[1-9] for when the specified crosses the finish line
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Staggered Start
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+1. Alt-[1-9] to start a numbered boat.
+1. Alt-[1-9] to mark a boat as finished.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Result tabulation
 
-### `npm run eject`
+When all boats have complete the race:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Set the race number
+1. Click 'save' to save the race as that number in localStorage
+1. In the results section set the required race number
+1. Click 'load' to view the results.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

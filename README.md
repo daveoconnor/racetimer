@@ -22,13 +22,13 @@ Should automatically open http://localhost:3000 in browser
 ## Group Start
 
 1. Set the number of boats (if starting them all at once)
-1. Alt-A to start
-1. Alt-[1-9] for when the specified crosses the finish line
+1. Ctrl-Alt-A to start
+1. Ctrl-Alt-[1-9] for when the specified crosses the finish line
 
 ## Staggered Start
 
-1. Alt-[1-9] to start a numbered boat.
-1. Alt-[1-9] to mark a boat as finished.
+1. Ctrl-Alt-[1-9] to start a numbered boat.
+1. Ctrl-Alt-[1-9] to mark a boat as finished.
 
 # Result tabulation
 

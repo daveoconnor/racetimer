@@ -42,7 +42,7 @@ export default function RaceTimer() {
 		}
 		const buttonPress = e => {
 			const numKeys = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-			if (e.altKey) {
+			if (e.altKey && e.ctrlKey) {
 				if (numKeys.includes(e.key) || e.key === 'a'){
 					setRaceStarted(true);
 				}
@@ -85,9 +85,9 @@ export default function RaceTimer() {
 			<section id="instructions">
 				<dl>
 					<dt>Start all boats racing</dt>
-					<dd>Alt + a</dd>
+					<dd>Ctrl + Alt + a</dd>
 					<dt>Start/stop timing a boat</dt>
-					<dd>Alt + $num</dd>
+					<dd>Ctrl + Alt + [number key]</dd>
 				</dl>
 			</section>
 			<section id="logging">

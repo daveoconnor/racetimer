@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.22.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.23",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-interval": "^2.1.0",
